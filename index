@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shihab masr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="fontawesomefree/css/all.min.css">
+   
+   <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --text-color: #2b2d42;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #e9ecef;
+            --hover-color: #4895ef;
+            --transition-speed: 0.3s;
+        }
+        
+        .dark-mode {
+            --primary-color: #4895ef;
+            --secondary-color: #4361ee;
+            --text-color: #f8f9fa;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --hover-color: #3a0ca3;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+        }
+        
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px 15px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+        
+        h1, h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+        
+        .profile-container {
+            position: relative;
+            margin: 0 auto 40px;
+            width: 100%;
+            max-width: 500px;
+            padding: 0 15px;
+
+        }
+        
+        .profile-image {
+            width: 80%;
+            max-height: 500px;
+            border-radius: 15px;
+            padding: 10px;
+            object-fit: contain;
+            filter: drop-shadow(0px 0px 10px #06477ca6); 
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .profile-text {
+            font-size: 1.1em;
+            margin: 0 auto 30px;
+            padding: 0 15px;
+        }
+        
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            padding: 0 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            gap: 10px;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            opacity: 0.9;
+        }
+        
+        .social-link i {
+            font-size: 1.3em;
+            position: relative;
+            left: -10px;
+            margin: 0;
+            padding:0 ;
+        }
+
+        .thre{
+
+            margin-left: 13px;
+        }
+        
+        .instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .facebook {
+            background-color: #3e4bc4;
+        }
+        
+        .threads {
+            background-color:black;
+        }
+    
+        .whatsapp {
+            background-color: #25D366;
+        }
+        .linkedin {
+            background-color: #1f4ffc;
+        }
+        .email {
+            background-color: #8a1ac7;
+        }
+        
+        .phone {
+            background-color: #6691a3;
+        }
+        .Twitter {
+            background-color: #170303;
+        }
+
+    
+        .TikTok {
+            background-color: #180202e7;
+        }
+
+        .x {
+            background-color: #000000;
+        }
+
+      
+        
+        .contact-methods {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+        
+        .theme-toggle {
+            position: relative;
+            top: 0px;
+            right: 20px;
+            background: var(--primary-color);
+            color: rgb(168, 23, 23);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1) ;
+        }
+        
+
+        
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        /* Enhanced Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                padding: 20px 10px;
+            }
+            
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                max-height: 350px;
+            }
+            
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 1em;
+                top: 10px;
+                right: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            .profile-text, .contact-item {
+                font-size: 1em;
+            }
+        }
+        
+        /* Accessibility and Focus States */
+        .social-link:focus,
+        .contact-item a:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <h3>~Śhehab muhamed</h3>
+    <h3>~Śhehab Masr</h3>
+        
+        <div class="profile-container">
+            <img src="D:\shosho.png" alt="صورة شهاب الدين الشخصية" class="profile-image">
+        </div>
+        
+        <p style="font-size: 1.1em; line-height: 1.6; margin: 0 auto 30px;">
+            Welcome to my personal website. I am Shehab Mohammed, and this is my personal picture in a beautiful frame that you can see up close.
+        </p>
+        
+        <h2>Contact us via the following methods:</h2>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/3mo_shosh_7?igsh=MWl6ZHF5cDJ4NDJzaA==" target="_blank" class="social-link instagram">
+                <span>إنستجرام</span>
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/shehab97622?t=DARC0mdhXAWAylW83cjZWQ&s=09" target="_blank" class="social-link x">
+                <span>تويتر</span>
+                <i class="fa-brands fa-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/shehab-eldeen-1105b5338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-link linkedin">
+                <span class="thre">linkedin</span>
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://www.facebook.com/share/1Bv3QmUNXR/" target="_blank" class="social-link facebook">
+                <span>فيسبوك</span>
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.threads.net/@3mo_shosh_7" target="_blank" class="social-link threads">
+                <span class="thre">threads</span> 
+                <i class="fa-brands fa-threads"></i>
+            </a>
+
+            <a href="https://wa.me/201020433085" target="_blank" class="social-link whatsapp">
+                <span>واتساب</span>
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.tiktok.com/@shihabmasr?_t=ZS-8v05fOOvJLu&_r=1" target="_blank" class="social-link TikTok">
+                <span class="thre">تيك توك</span>
+                <i class="fa-brands fa-TikTok" ></i>
+            </a>
+            <a href="mailto:shehabaldeeb735@gmail.com" target="_blank" class="social-link email">
+                <span>البريد الإلكتروني</span>
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+201020433085" target="_blank" class="social-link phone">
+                <span>اتصال هاتفي</span>
+                <i class="fas fa-phone"></i>
+            </a>
+            
+           
+
+
+
+        </div>
+        
+        <div class="contact-methods">
+            <div class="contact-item">
+                <i class="fas fa-phone" style="color: var(--primary-color);"></i>
+                <span>الهاتف: <a href="tel:+201020433085" style="color: var(--primary-color); text-decoration: none;">01020433085</a></span>
+            </div> انا احمد سامي مهدي لعمل مثل هدا الموقع اتصل بي علي رقم :-01027698269
+         </div>
+            <div>  جميع الحقوق محفوظه </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+// تبديل الوضع الداكن/الفاتح
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// التحقق من تفضيلات النظام
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// الأيقونات - استبدلها بأيقوناتك المفضلة
+const darkIcon = '<i class="fas fa-sun"></i>'; // أيقونة الوضع الداكن
+const lightIcon = '<i class="fas fa-moon"></i>'; // أيقونة الوضع الفاتح
+
+// تعيين الوضع الأولي
+function initTheme() {
+    // الأولوية للتفضيل المحفوظ في localStorage
+    const savedMode = localStorage.getItem('darkMode');
+    
+    if (savedMode !== null) {
+        if (savedMode === 'true') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = lightIcon;
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.innerHTML = darkIcon;
+        }
+    } else {
+        // إذا لم يكن هناك تفضيل محفوظ، استخدم تفضيلات النظام
+        if (prefersDarkScheme.matches) {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = lightIcon;
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.innerHTML = darkIcon;
+            localStorage.setItem('darkMode', 'false');
+        }
+    }
+}
+
+// تطبيق الثيم عند التحميل
+initTheme();
+
+// حدث النقر على زر التبديل
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    const isDark = body.classList.contains('dark-mode');
+    themeToggle.innerHTML = isDark ? lightIcon : darkIcon;
+    
+    // حفظ التفضيل في localStorage
+    localStorage.setItem('darkMode', isDark);
+});
+
+// تحديث الوضع عند تغيير تفضيلات النظام (فقط إذا لم يكن هناك تفضيل محفوظ)
+prefersDarkScheme.addListener(e => {
+    if (localStorage.getItem('darkMode') === null) {
+        if (e.matches) {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = lightIcon;
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.innerHTML = darkIcon;
+            localStorage.setItem('darkMode', 'false');
+        }
+    }
+});
+    </script>
+</body>
+</html>
